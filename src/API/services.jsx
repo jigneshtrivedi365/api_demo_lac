@@ -7,3 +7,14 @@ export const getStudentData = async() => {
     // console.log(result);
     return result;
 }
+
+export const postStudent = async (data) => {
+    try {
+        const result = await axios.post(`${BASE_URL}addStudent`, data);
+        return result;
+    } catch (error) {
+        console.error("Error posting student:", error.response ? error.response.data : error.message);
+        return null;
+    }
+};
+
